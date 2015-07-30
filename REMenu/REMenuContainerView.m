@@ -44,12 +44,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    if(IS_IPHONE_6P || IS_IPAD)
-        NSLog(@"iii");
-    CGFloat landscapeOffset = (IS_IPAD || IS_IPHONE_6P) ? 44.0 : 32.0;
-    NSLog(@"landscapeoffset %f", landscapeOffset);
     
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    CGFloat landscapeOffset = (IS_IPAD || IS_IPHONE_6P) ? 44.0 : 32.0;
     CGFloat navBarHeight = UIInterfaceOrientationIsPortrait(orientation) ? 44.0 : landscapeOffset;
     
     if (self.navigationBar && !self.appearsBehindNavigationBar) {
